@@ -71,6 +71,114 @@
         "achievements": []
       },
       "oath": ""
+    },
+    {
+      "id": "1e21",
+      "username": "Atul Gathwala",
+      "email": "atulgathwalaa1728@gmail.com",
+      "password": "abc000",
+      "confirmPassword": "abc000",
+      "isSubscribe": false,
+      "userImage": "/src/Assets/Images/userRegisterImage.png",
+      "address": {
+        "city": "",
+        "state": "",
+        "country": "",
+        "completeAddress": ""
+      },
+      "contact": "",
+      "dob": "",
+      "gender": "",
+      "resume": {
+        "linkedIn": "",
+        "gitHub": "",
+        "profile": "",
+        "expereince": [],
+        "projects": [],
+        "certificates": [],
+        "education": {
+          "degree": "",
+          "secondary": "",
+          "primary": "",
+          "diploma": ""
+        },
+        "skills": [],
+        "hobbies": [],
+        "achievements": []
+      },
+      "oath": ""
+    },
+    {
+      "id": "71ac",
+      "username": "Atul Gathwala",
+      "email": "atulgathwalaaa1728@gmail.com",
+      "password": "abc000",
+      "confirmPassword": "abc000",
+      "isSubscribe": false,
+      "userImage": "/src/Assets/Images/userRegisterImage.png",
+      "address": {
+        "city": "",
+        "state": "",
+        "country": "",
+        "completeAddress": ""
+      },
+      "contact": "",
+      "dob": "",
+      "gender": "",
+      "resume": {
+        "linkedIn": "",
+        "gitHub": "",
+        "profile": "",
+        "expereince": [],
+        "projects": [],
+        "certificates": [],
+        "education": {
+          "degree": "",
+          "secondary": "",
+          "primary": "",
+          "diploma": ""
+        },
+        "skills": [],
+        "hobbies": [],
+        "achievements": []
+      },
+      "oath": ""
+    },
+    {
+      "id": "1c46",
+      "username": "Atul Gathwala",
+      "email": "atulgathwalacasjcj1728@gmail.com",
+      "password": "abc000",
+      "confirmPassword": "abc000",
+      "isSubscribe": false,
+      "userImage": "/src/Assets/Images/userRegisterImage.png",
+      "address": {
+        "city": "",
+        "state": "",
+        "country": "",
+        "completeAddress": ""
+      },
+      "contact": "",
+      "dob": "",
+      "gender": "",
+      "resume": {
+        "linkedIn": "",
+        "gitHub": "",
+        "profile": "",
+        "expereince": [],
+        "projects": [],
+        "certificates": [],
+        "education": {
+          "degree": "",
+          "secondary": "",
+          "primary": "",
+          "diploma": ""
+        },
+        "skills": [],
+        "hobbies": [],
+        "achievements": []
+      },
+      "oath": ""
     }
   ]
 }

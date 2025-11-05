@@ -1,41 +1,35 @@
-import React, { useContext, useState } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom';
-import { AUTHCONTEXTAPI } from '../../Context/AuthContext';
+import React, { useContext, useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import { AUTHCONTEXTAPI } from "../../Context/AuthContext";
 
 const Login = () => {
-  let navigate = useNavigate()
+  let navigate = useNavigate();
 
-  let {login}= useContext(AUTHCONTEXTAPI)
+  let { login } = useContext(AUTHCONTEXTAPI);
 
   let initialLoginState = {
-    email:"",
-    password:""
-  }
+    email: "",
+    password: "",
+  };
 
-  let [loginData , setLoginData]= useState(initialLoginState)
+  let [loginData, setLoginData] = useState(initialLoginState);
 
-    let handleInputChange = (e)=>{
-      let name  = e.target.name;
-      let value = e.target.value;
-      setLoginData({...loginData, [name]:value})
+  let handleInputChange = (e) => {
+    let name = e.target.name;
+    let value = e.target.value;
+    setLoginData({ ...loginData, [name]: value });
+  };
 
-    }
+  let { email, password } = loginData;
 
+  let handleSubmit = (e) => {
+    e.preventDefault();
 
+    login(loginData);
 
-    let {email , password}= loginData;
+    navigate("/");
+  };
 
-
-    
-    let handleSubmit = (e)=>{
-      e.preventDefault()
-
-      login(loginData);
-
-      navigate("/")
-
-    }
- 
   return (
     <section className="h-[90vh] w-[100vw] flex justify-center items-center ">
       <article className=" w-[400px] bg-white shadow-md rounded-md p-[20px]">
@@ -52,26 +46,25 @@ const Login = () => {
               <label htmlFor="">Email</label>
               <input
                 type="text"
-                className="border-2 text-black w-[100%] py-[7px] rounded-[7px] outline-none border-[#eee]"
+                className=" px-2 border-2 text-black w-[100%] py-[7px] rounded-[7px] outline-none border-[#eee]"
                 name="email"
                 onChange={handleInputChange}
                 value={email}
-              
               />
             </div>
             <div className="flex gap-1 flex-col">
               <label htmlFor="">Password</label>
               <input
                 type="text"
-                className="border-2 text-black w-[100%] py-[7px] rounded-[7px] outline-none border-[#eee]"
+                className=" px-2 border-2 text-black w-[100%] py-[7px] rounded-[7px] outline-none border-[#eee]"
                 name="password"
-             value={password}
+                value={password}
                 onChange={handleInputChange}
               />
             </div>
 
             <div>
-              <button className="w-[100%] bg-blue-600 text-[#eee] py-[7px] rounded-md cursor-pointer mt-[15px] hover:bg-[#2626fc] ">
+              <button className="w-[100%] bg-blue-600 text-white py-[7px] rounded-md cursor-pointer mt-[15px] hover:bg-[#2626fc] ">
                 Submit
               </button>
             </div>
@@ -87,6 +80,6 @@ const Login = () => {
       </article>
     </section>
   );
-}
+};
 
-export default Login
+export default Login;

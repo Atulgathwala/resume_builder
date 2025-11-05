@@ -6,8 +6,9 @@ import { AUTHCONTEXTAPI } from "../../Context/AuthContext";
 import toast from "react-hot-toast";
 
 const Register = () => {
-  let { signUp } = useContext(AUTHCONTEXTAPI);
-  let navigate = useNavigate()
+  let { setDataForOtpValidation, genrateOTP, setGenratedOtp } =
+    useContext(AUTHCONTEXTAPI);
+  let navigate = useNavigate();
 
   let initialRegistetState = {
     username: "",
@@ -54,23 +55,19 @@ const Register = () => {
     setRegisterData({ ...registerData, [name]: value });
   };
 
-  let handleSubmit = (e) => {
+  let handleSubmit = async (e) => {
     e.preventDefault();
 
-
-   if(password==confirmPassword ){
-
-   
-    signUp(registerData);
-
-    setRegisterData(initialRegistetState);
-    navigate("/login");
-   }
-   else{
-    toast.error("password and confirm password should be same ")
-   }
-
-}
+    if (password == confirmPassword) {
+      setDataForOtpValidation(registerData);
+      let otp = genrateOTP();
+      setGenratedOtp(otp);
+      navigate("/otp_validation");
+      setRegisterData(initialRegistetState);
+    } else {
+      toast.error("password and confirm password should be same ");
+    }
+  };
   return (
     <section className="h-[90vh] w-[100vw] flex justify-center items-center ">
       <article className=" w-[400px] bg-white shadow-md rounded-md p-[20px]">
@@ -136,7 +133,7 @@ const Register = () => {
 
             <div>
               {" "}
-              <button className="w-[100%] bg-blue-600 text-[#eee] py-[7px] rounded-md cursor-pointer mt-[15px] hover:bg-[#2626fc] ">
+              <button className="w-[100%] bg-blue-600 text-white py-[7px] rounded-md cursor-pointer mt-[15px] hover:bg-[#2626fc] ">
                 Submit
               </button>
             </div>

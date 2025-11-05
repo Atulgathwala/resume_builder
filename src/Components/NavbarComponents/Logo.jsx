@@ -9,7 +9,7 @@ const Logo = () => {
         <img
           src={LOGO}
           alt=""
-          className="h-[45px]   "
+          className="h-[35px]   "
         />
 
         <p className="text-xl flex gap-1 font-semibold"><span>Resume</span><span className="text-blue-600">Builder</span></p>

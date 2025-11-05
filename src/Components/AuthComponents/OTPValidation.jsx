@@ -1,10 +1,13 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
-import { AUTHContextAPI } from "../../Context/AuthContext";
+
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { AUTHCONTEXTAPI } from "../../Context/AuthContext";
 
 const OTPValidation = () => {
+  let { signUp, dataForOtpValidation, genratedOtp } =
+    useContext(AUTHCONTEXTAPI);
   let navigate = useNavigate();
   let [timer, setTimer] = useState(60);
 
@@ -13,19 +16,6 @@ const OTPValidation = () => {
       setTimer(timer--);
     }, 1000);
   }, []);
-
-  let {
-    genratedOTP,
-
-    userEnteredOtp,
-    setUserEnterOtp,
-    preRegisterUserData,
-    setPreRegisterUserData,
-    whichValidation,
-    setWhichValidation,
-    setResetEmail,
-    resetEmail,
-  } = useContext(AUTHContextAPI);
 
   let initialOtpState = {
     box1: "",
@@ -36,7 +26,7 @@ const OTPValidation = () => {
 
   useEffect(() => {
     toast.success("Enter Otp");
-    console.log(genratedOTP);
+    toast.success(genratedOtp);
   }, []);
 
   let [otpValidData, setOtpValidData] = useState(initialOtpState);
@@ -54,7 +44,7 @@ const OTPValidation = () => {
 
     if ("0123456789".includes(value)) {
       setOtpValidData({ ...otpValidData, [name]: value });
-      if (value.length == "1") {
+      if (value.length == "1" && inpRef) {
         inpRef.current.focus();
       }
     }
@@ -65,37 +55,14 @@ const OTPValidation = () => {
 
     let userFinalOtp = `${otpValidData.box1}${otpValidData.box2}${otpValidData.box3}${otpValidData.box4}`;
 
-    // ? Try for reset password
-
-    if (whichValidation == "reset_password_validation") {
-      console.log("Submitted in otp validation ", resetEmail);
-
-      if (userFinalOtp == genratedOTP) {
-        toast.success("ready to reset the password");
-        navigate("/change_password");
+    if (userFinalOtp == genratedOtp) {
+      if (await signUp(dataForOtpValidation)) {
+        navigate("/login");
       } else {
-        toast.error("Enter valid otp");
+        navigate("/register");
       }
-
-      // ? ending of resert otp
-    } else if (whichValidation == "registerValidation") {
-      // ? try for register
-      try {
-        if (userFinalOtp == genratedOTP) {
-          let resp = await axios.post(
-            "http://localhost:5000/users",
-            preRegisterUserData
-          );
-
-          toast.success("Registration done successfully");
-          toast.success(`Welcome ${preRegisterUserData?.username}`);
-          navigate("/login");
-        } else {
-          toast.error("Otp not matching please enter correct otp");
-        }
-      } catch (err) {
-        toast.error(`${err?.message}`);
-      }
+    } else {
+      toast.error("Ivalid Otp");
     }
   };
 
@@ -178,7 +145,7 @@ const OTPValidation = () => {
             </div>
 
             <div>
-              <button className="w-[100%] bg-[#5454e9] text-[#eee] py-[7px] rounded-md cursor-pointer mt-[15px] hover:bg-[#2626fc] ">
+              <button className="w-[100%] bg-blue-600 font-semibold text-white py-[7px] rounded-md cursor-pointer mt-[15px] hover:bg-[#2626fc] ">
                 Verify
               </button>
             </div>
