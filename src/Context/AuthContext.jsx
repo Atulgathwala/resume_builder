@@ -17,12 +17,11 @@ const AuthContext = ({ children }) => {
 
   useEffect(() => {
     getAllUsersFromDb();
-  }, []);
+  }, [isAuth?.userImage]);
 
   useEffect(() => {
     let tokenid = window.localStorage.getItem("USERTOKEN");
     if (tokenid) {
-      console.log("user token", tokenid);
       let myUser = allUsers.find((user) => {
         return user.id == tokenid;
       });
@@ -81,7 +80,6 @@ const AuthContext = ({ children }) => {
   let genrateOTP = () => {
     return Math.trunc(Math.random() * 8999) + 1000;
   };
- 
 
   return (
     <AUTHCONTEXTAPI.Provider
@@ -95,6 +93,7 @@ const AuthContext = ({ children }) => {
         genrateOTP,
         genratedOtp,
         setGenratedOtp,
+        getAllUsersFromDb,
       }}
     >
       {children}

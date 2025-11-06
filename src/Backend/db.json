@@ -7,7 +7,7 @@
       "password": "abc000",
       "confirmPassword": "sasss",
       "isSubscribe": false,
-      "userImage": "/src/Assets/Images/userRegisterImage.png",
+      "userImage": "https://res.cloudinary.com/dasa3kzyf/image/upload/v1762433398/eo0thpk0gyi08ishxlux.jpg",
       "address": {
         "city": "",
         "state": "",
@@ -150,6 +150,42 @@
       "email": "atulgathwalacasjcj1728@gmail.com",
       "password": "abc000",
       "confirmPassword": "abc000",
+      "isSubscribe": false,
+      "userImage": "/src/Assets/Images/userRegisterImage.png",
+      "address": {
+        "city": "",
+        "state": "",
+        "country": "",
+        "completeAddress": ""
+      },
+      "contact": "",
+      "dob": "",
+      "gender": "",
+      "resume": {
+        "linkedIn": "",
+        "gitHub": "",
+        "profile": "",
+        "expereince": [],
+        "projects": [],
+        "certificates": [],
+        "education": {
+          "degree": "",
+          "secondary": "",
+          "primary": "",
+          "diploma": ""
+        },
+        "skills": [],
+        "hobbies": [],
+        "achievements": []
+      },
+      "oath": ""
+    },
+    {
+      "id": "3278",
+      "username": "shreeraj",
+      "email": "shree@gmail.com",
+      "password": "abc123",
+      "confirmPassword": "abc123",
       "isSubscribe": false,
       "userImage": "/src/Assets/Images/userRegisterImage.png",
       "address": {

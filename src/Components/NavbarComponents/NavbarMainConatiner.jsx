@@ -6,7 +6,7 @@ import AuthMenu from "./AuthMenu";
 
 const NavbarMainConatiner = () => {
   return (
-    <section className="h-[70px] w-[100vw]   bg-white shadow-md">
+    <section className="h-[70px] w-[100vw] sticky top-0   bg-white shadow-md">
       <nav className="h-[100%] w-[95%]  m-auto flex justify-between items-center">
         <Logo />
         <SearchBar />
