@@ -1,12 +1,15 @@
 import React from "react";
-import { FaHeart, FaImage, FaUserAlt } from "react-icons/fa";
-import { ImProfile } from "react-icons/im";
+import { AiFillDashboard, AiOutlineDashboard } from "react-icons/ai";
+import { FaImage, FaRupeeSign, FaUserAlt, FaUsers } from "react-icons/fa";
+import { ImBlocked, ImProfile } from "react-icons/im";
 import { IoLogOut } from "react-icons/io5";
 import { MdDeleteForever } from "react-icons/md";
+import { PiReadCvLogoBold } from "react-icons/pi";
 import { RiLockPasswordFill } from "react-icons/ri";
+import { VscVersions } from "react-icons/vsc";
 import { NavLink } from "react-router-dom";
 
-const UserSidebar = () => {
+const AdminSidebar = () => {
   return (
     <section
       id="userSidebar"
@@ -17,56 +20,50 @@ const UserSidebar = () => {
           <li>
             <NavLink
               end
-              to={"/user_profile"}
+              to={"/admin"}
               className="flex items-center gap-3 font-semibold py-1 px-2 rounded-md"
             >
-              <FaUserAlt /> <span>User Profile</span>
+              <AiOutlineDashboard className="text-[20px]" />{" "}
+              <span>Dashboard</span>
             </NavLink>
           </li>
 
           <li>
             <NavLink
-              to={"user_profile_update"}
+              to={"all_users"}
               className="flex items-center gap-3 font-semibold py-1 px-2 rounded-md"
             >
-              <ImProfile /> <span>Profile Update</span>
+              <FaUsers className="text-[20px]" /> <span>All Users</span>
             </NavLink>
           </li>
 
           <li>
             <NavLink
-              to={"update_profile_picture"}
+              to={"all_transactions"}
               className="flex items-center gap-3 font-semibold py-1 px-2 rounded-md"
             >
-              <FaImage /> <span>Picture Update</span>
+              <FaRupeeSign className="text-[20px]" />{" "}
+              <span>All Transaction</span>
             </NavLink>
           </li>
 
           <li>
             <NavLink
-              to={"update_user_password"}
+              to={"all_blocked_users"}
               className="flex items-center gap-3 font-semibold py-1 px-2 rounded-md"
             >
-              <RiLockPasswordFill /> <span>Update Password</span>
+              <ImBlocked className="text-[20px]" />{" "}
+              <span>All Blocked users</span>
             </NavLink>
           </li>
 
           <li>
             <NavLink
-              to={"favourite_templates"}
+              to={"all_templates"}
               className="flex items-center gap-3 font-semibold py-1 px-2 rounded-md"
             >
-              <FaHeart /> <span>Favourite Templates</span>
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink
-              to={"delete_user_account"}
-              style={({ isActive }) => ({ background: isActive ? "red" : "" })}
-              className="flex items-center gap-3 text-red-700 font-semibold py-1 px-2 rounded-md"
-            >
-              <MdDeleteForever /> <span>Delete Account</span>
+              <VscVersions className="text-[20px] " />{" "}
+              <span>All Templates</span>
             </NavLink>
           </li>
         </ul>
@@ -81,4 +78,4 @@ const UserSidebar = () => {
   );
 };
 
-export default UserSidebar;
+export default AdminSidebar;

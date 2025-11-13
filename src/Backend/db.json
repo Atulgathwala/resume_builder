@@ -5,34 +5,52 @@
       "username": "Atul Gathwala",
       "email": "atulgathwala1728@gmail.com",
       "password": "abc000",
-      "confirmPassword": "sasss",
+      "confirmPassword": "",
       "isSubscribe": false,
-      "userImage": "https://res.cloudinary.com/dasa3kzyf/image/upload/v1762433398/eo0thpk0gyi08ishxlux.jpg",
+      "userImage": "http://res.cloudinary.com/dasa3kzyf/image/upload/v1762492905/ua0mk6lfisfrkzbssjx0.jpg",
       "address": {
-        "city": "",
-        "state": "",
-        "country": "",
-        "completeAddress": ""
+        "city": "Shamli",
+        "state": "Uttar Pradesh",
+        "country": "India",
+        "completeAddress": "House no.36\nSugar mill colony shamli"
       },
-      "contact": "",
-      "dob": "",
-      "gender": "",
+      "role":"admin",
+      "contact": "08218695087",
+      "dob": "2025-11-04",
+      "gender": "male",
       "resume": {
-        "linkedIn": "",
-        "gitHub": "",
-        "profile": "",
-        "expereince": [],
-        "projects": [],
+        "linkedIn": "mylinkedin.com",
+        "gitHub": "mygithub.com",
+        "expereince": [
+          {
+            "company": "my Company",
+            "years": "2",
+            "role": "Developer"
+          }
+        ],
+        "projects": [
+          {
+            "name": "Project1",
+            "technologies": "html, css, js , react js",
+            "description": "this is description of project"
+          }
+        ],
         "certificates": [],
         "education": {
-          "degree": "",
-          "secondary": "",
-          "primary": "",
-          "diploma": ""
+          "degree": "my degree",
+          "degpercentage": "33",
+          "degreeyop": "2045",
+          "college": "my univeristy",
+          "secondarypercentage": "56",
+          "secondaryYop": "2023",
+          "primarypercentage": "38",
+          "primaryYop": "2021"
         },
-        "skills": [],
-        "hobbies": [],
-        "achievements": []
+        "skills": [
+          "html",
+          "css",
+          "js"
+        ]
       },
       "oath": ""
     },
@@ -40,42 +58,6 @@
       "id": "5fbc",
       "username": "Atul Gathwala",
       "email": "atulgathwala1728@gmail.com",
-      "password": "abc000",
-      "confirmPassword": "abc000",
-      "isSubscribe": false,
-      "userImage": "/src/Assets/Images/userRegisterImage.png",
-      "address": {
-        "city": "",
-        "state": "",
-        "country": "",
-        "completeAddress": ""
-      },
-      "contact": "",
-      "dob": "",
-      "gender": "",
-      "resume": {
-        "linkedIn": "",
-        "gitHub": "",
-        "profile": "",
-        "expereince": [],
-        "projects": [],
-        "certificates": [],
-        "education": {
-          "degree": "",
-          "secondary": "",
-          "primary": "",
-          "diploma": ""
-        },
-        "skills": [],
-        "hobbies": [],
-        "achievements": []
-      },
-      "oath": ""
-    },
-    {
-      "id": "1e21",
-      "username": "Atul Gathwala",
-      "email": "atulgathwalaa1728@gmail.com",
       "password": "abc000",
       "confirmPassword": "abc000",
       "isSubscribe": false,
@@ -215,6 +197,56 @@
         "achievements": []
       },
       "oath": ""
+    },
+     {
+      "id": "3279",
+      "username": "Shawn Garcia",
+      "email": "shawngarcia@gmale.com",
+      "password": "abc123",
+      "confirmPassword": "abc123",
+      "isSubscribe": false,
+      "userImage": "/src/Assets/Images/DemoProfileImage.png",
+      "address": {
+        "city": "Any city",
+        "state": "any state",
+        "country": "any country",
+        "completeAddress": "123 anywhere street"
+      },
+  
+      "contact": "0123456789",
+      "dob": "12/10/2002",
+      "gender": "female",
+      "resume": {
+        "linkedIn": "myLinkedIn.com",
+        "gitHub": "myGitHub.com",
+        "profile": "",
+        "expereince": [ {
+            "company": "my Company",
+            "years": "2",
+            "role": "Developer"
+          }],
+        "projects": [{
+            "name": "Project1",
+            "technologies": "html, css, js , react js",
+            "description": "this is description of project"
+          }],
+        "certificates": [],
+        "education": {
+          "degree": "my degree",
+          "degpercentage": "33",
+          "degreeyop": "2045",
+          "college": "my univeristy",
+          "secondarypercentage": "56",
+          "secondaryYop": "2023",
+          "primarypercentage": "38",
+          "primaryYop": "2021"
+        },
+        "skills": ["html","css","js","react js"],
+        "hobbies": [],
+        "achievements": []
+      },
+      "oath": ""
     }
-  ]
+  ],
+  "blockedUsers": []
 }

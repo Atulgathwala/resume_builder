@@ -14,6 +14,7 @@ import UserProfilePictureUpdate from "../Components/Layouts/User/UserProfilePict
 import UserPasswordUpdate from "../Components/Layouts/User/UserPasswordUpdate";
 import UserDeleteAccount from "../Components/Layouts/User/UserDeleteAccount";
 import OTPValidation from "../Components/AuthComponents/OTPValidation";
+import AdminLayout from "../Components/Layouts/Admin/AdminLayout";
 
 let MYROUTES = createBrowserRouter([
   {
@@ -64,16 +65,47 @@ let MYROUTES = createBrowserRouter([
         element: <UserProfileUpdate />,
       },
       {
-        path: "update_prodile_picture",
+        path: "update_profile_picture",
         element: <UserProfilePictureUpdate />,
       },
       {
         path: "update_user_password",
-        element: <UserPasswordUpdate />,
+        element: <ResetPassword />,
       },
       {
         path: "delete_user_account",
         element: <UserDeleteAccount />,
+      },
+      {
+        path: "favourite_templates",
+        element:"Favourite Templates"
+      },
+    ],
+  },
+
+  {
+    path: "admin",
+    element: <AdminLayout />,
+    children: [
+      {
+        index: true,
+        element: "Admin dashboard",
+      },
+      {
+        path: "all_users",
+        element: "all users",
+      },
+      {
+        path: "all_transactions",
+        element: "all transactions",
+      },
+      {
+        path: "all_blocked_users",
+        element: "all Blocked Users",
+      },
+      {
+        path: "all_templates",
+        element: "all Templates",
       },
     ],
   },

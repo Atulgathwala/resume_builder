@@ -6,27 +6,29 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const UserProfilePictureUpdate = () => {
+  let navigate = useNavigate();
   let { isAuth, getAllUsersFromDb } = useContext(AUTHCONTEXTAPI);
   let [previewImage, setPreviewImage] = useState(null);
-  let [profilePictureFile, setProfilePicture] = useState(null);
-  let navigate = useNavigate();
+  let [ProfilePictureFile, setProfilePictureFile] = useState(null);
 
   let { updateProfilePicture } = useContext(USERCONTEXTAPI);
 
   let handleChange = (e) => {
     let imageFile = e.target.files[0];
     if (imageFile) {
-      setProfilePicture(imageFile);
       let url = URL.createObjectURL(imageFile);
+      setProfilePictureFile(imageFile);
       setPreviewImage(url);
     }
   };
 
   let handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
       let formData = new FormData();
-      formData.append("file", profilePictureFile);
+
+      formData.append("file", ProfilePictureFile);
       formData.append("upload_preset", "resume_builder");
       formData.append("cloud_name", "dasa3kzyf");
 
@@ -35,14 +37,13 @@ const UserProfilePictureUpdate = () => {
         formData
       );
 
-      let { secure_url } = data;
+      updateProfilePicture({ userImage: data?.url });
 
-      if (await updateProfilePicture({ userImage: secure_url })) {
-        getAllUsersFromDb();
-        navigate("/user_profile");
-      }
+      toast.success("Image uploaded Successfully");
+
+      navigate("/user_profile");
     } catch (err) {
-      toast.error("Image updation failed");
+      toast.error("Image not Uploaded");
     }
   };
   return (
