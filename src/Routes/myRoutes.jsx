@@ -15,6 +15,7 @@ import UserPasswordUpdate from "../Components/Layouts/User/UserPasswordUpdate";
 import UserDeleteAccount from "../Components/Layouts/User/UserDeleteAccount";
 import OTPValidation from "../Components/AuthComponents/OTPValidation";
 import AdminLayout from "../Components/Layouts/Admin/AdminLayout";
+import TemplateEditorMainComponent from "../Components/TemplatesComponent/ImageTemplates/Templateefitor/TemplateEditorMainComponent";
 
 let MYROUTES = createBrowserRouter([
   {
@@ -78,7 +79,7 @@ let MYROUTES = createBrowserRouter([
       },
       {
         path: "favourite_templates",
-        element:"Favourite Templates"
+        element: "Favourite Templates",
       },
     ],
   },
@@ -108,6 +109,11 @@ let MYROUTES = createBrowserRouter([
         element: "all Templates",
       },
     ],
+  },
+  // ? Templateeditor
+  {
+    path: "/edit_template",
+    element: <TemplateEditorMainComponent />,
   },
   { path: "*", element: <PageNotFound /> },
 ]);

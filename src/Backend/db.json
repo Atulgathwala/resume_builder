@@ -248,5 +248,38 @@
       "oath": ""
     }
   ],
-  "blockedUsers": []
+  "blockedUsers": [],
+
+  "ALL_Templates":[
+    {
+      "id":"1",
+      "isPaid":"false",
+      "tempName":"<FreeImgTemplate1 />",
+      "thumbnail":"src/Assets/TemplatesThumbnail/FreeImgTempalte1.png",
+      "type":"img"
+    },
+    {
+      "id":"2",
+      "isPaid":"true",
+      "tempName":"<FreeTextTemplate2 />",
+      "thumbnail":"src/Assets/TemplatesThumbnail/FreeTexttemplate2.png",
+     
+       "type":"txt"
+    },
+    {
+      "id":"3",
+      "isPaid":"false",
+      "tempName":"<PaidImgTemplate3 />",
+      "thumbnail":"src/Assets/TemplatesThumbnail/PaidImgtemplate3.png",
+       "type":"img"
+    }, 
+    {
+      "id":"4",
+      "isPaid":"false",
+      "tempName":"<PaidTextTemplate4 />",
+      "thumbnail":"src/Assets/TemplatesThumbnail/PaidTextTemaplate4.png",
+       "type":"txt"
+    }
+   
+  ]
 }

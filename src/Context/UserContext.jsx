@@ -1,11 +1,14 @@
 import axios from "axios";
-import React, { createContext, useContext } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { AUTHCONTEXTAPI } from "./AuthContext";
 
 export let USERCONTEXTAPI = createContext();
 const UserContext = ({ children }) => {
   let { isAuth, getAllUsersFromDb, setIsAuth } = useContext(AUTHCONTEXTAPI);
+  
+
+ 
   // ? Update Profile Picture
 
   let updateProfilePicture = async (payload) => {
@@ -37,9 +40,9 @@ const UserContext = ({ children }) => {
   let handleDeleteAccount = async (id) => {
     try {
       let data = await axios.delete(`http://localhost:5000/users/${id}`);
-       setIsAuth(null);
-       window.localStorage.clear();
-      
+      setIsAuth(null);
+      window.localStorage.clear();
+
       return true;
     } catch (error) {
       toast.error(error.message);
@@ -53,6 +56,7 @@ const UserContext = ({ children }) => {
         updateProfilePicture,
         handleUpdateUserdetails,
         handleDeleteAccount,
+       
       }}
     >
       {children}
